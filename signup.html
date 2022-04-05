@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+<script>
+  var firebaseConfig = {
+   apiKey: "AIzaSyC9eg32aVlW7VYtvnsUJkoS2iA9qsH1Sho",
+   authDomain: "ctgal-74042.firebaseapp.com",
+   projectId: "ctgal-74042",
+   storageBucket: "ctgal-74042.appspot.com",
+   messagingSenderId: "465527000832",
+   appId: "1:465527000832:web:8d0a1826c40906471aade5",
+   measurementId: "G-5S515MH1DB"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Input -->
+
+
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<div class="container-fluid">
+            <img style="width: 30px; height: 30px; cursor: pointer;" src="./asset/arrpw.png" onclick="changePage('index')">
+        </img>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"> <a class="nav-link" onclick="changePage('index')" aria-current="page" href="#">Home</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">Contact Us</a> </li>
+					<li class="nav-item"> <a class="nav-link" onclick="changePage('signin')" >Login</a> </li>
+					<li class="nav-item"> <a class="nav-link active" href="#">Sign up</a> </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="divSec" style="justify-content: flex-start;">
+        
+          
+          
+          <label for="basic-url">Fist Name</label>
+          <div class="input-group mb-3">
+            
+            <input type="text" id="firstName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+          
+        
+          <label for="basic-url">Last Name</label>
+          <div class="input-group mb-3">
+            
+            <input type="text" id="LastName" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+
+
+
+          <label for="basic-url">Email ID</label>
+          <div class="input-group mb-3">
+            
+            <input type="text" id="email" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+
+
+
+
+          <label for="basic-url">Profile Type</label>
+          <div class="input-group mb-3">
+            
+            <select id="profileType" class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="Dependent">Dependent</option>
+                <option value="Independent">Independent</option>
+              </select>          </div>
+
+
+
+
+
+          <label for="basic-url">Password</label>
+          <div class="input-group mb-3">
+            
+            <input id="password" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+         
+          
+
+
+         
+
+
+
+
+
+          <div  class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><input id="checkBox" type="checkbox" name="" id=""></span>
+            <input  type="text" placeholder="Agree to Term & Conditions" class="form-control" >
+          </div>
+
+
+
+          <button type="button" class="btn btn-primary" onclick="Signup()">Sign Up</button>
+
+
+          
+	</div>
+
+
+
+
+
+
+
+  <footer class="bg-white">
+    <div class="container py-5">
+    <div class="row py-4">
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+      <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+      <ul class="list-inline mt-4">
+        <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+      </ul>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+      <h6 class="text-uppercase font-weight-bold mb-4">Shop</h6>
+      <ul class="list-unstyled mb-0">
+        <li class="mb-2"><a href="#" class="text-muted">For Women</a></li>
+        <li class="mb-2"><a href="#" class="text-muted">For Men</a></li>
+        <li class="mb-2"><a href="#" class="text-muted">Stores</a></li>
+        <li class="mb-2"><a href="#" class="text-muted">Our Blog</a></li>
+      </ul>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+      <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+      <ul class="list-unstyled mb-0">
+        <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+        <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+        <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+        <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+      </ul>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-lg-0">
+      <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+      <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+      <div class="p-1 rounded border">
+        <div class="input-group">
+        <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+        <div class="input-group-append">
+          <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+    <div class="container text-center">
+      <p class="text-muted mb-0 py-2">© 2019 Bootstrapious All rights reserved.</p>
+    </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+    
+
+</body>
+<script>
+function changePage(e){
+	window.location.replace(`/${e}.html`)
+}
+
+</script>
+
+
+</html>
